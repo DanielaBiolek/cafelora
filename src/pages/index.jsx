@@ -10,12 +10,19 @@ import { Header } from '../components/Header';
 
 
 
+const response = await fetch(
+  'http://localhost:4000/api/drinks'
+);
+const drinksData = await response.json();
+
+
+
 document.querySelector('#root').innerHTML = render(
   <div className="page">
     <Header />
     <main>
       <Banner />
-      <Menu />
+      <Menu drinks={drinksData.data}/>
       <Gallery />
       <Contact />
     </main>
@@ -33,3 +40,7 @@ const navSwitchClass = () => {
 
 navButton.addEventListener('click', navSwitchClass);
 navRollout.addEventListener('click', navSwitchClass);
+
+
+
+

@@ -1,7 +1,7 @@
 import './index.css';
 import { Drink } from '../Drink';
 
-export const Menu = () => {
+export const Menu = (drinks) => {
     
   return (    
 
@@ -12,8 +12,9 @@ export const Menu = () => {
               Vyberte si z našeho interaktivního menu a nemusíte čekat na obsluhu
             </p>
             <div className="drinks-list">
-              <Drink name="Romano" image="http://localhost:4000/assets/cups/romano.png"/>            
-            </div>
+              {drinks.drinks.map((drink) => (
+              <Drink name={drink.name} image={drink.image} layers={drink.layers} ordered={drink.ordered}/> )) }
+            </div> 
 
             <div className="order-detail">
               <a href="/order.html">Detail objednávky</a>
