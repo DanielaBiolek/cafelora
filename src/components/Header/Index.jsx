@@ -2,7 +2,7 @@ import './index.css';
 
 export const Header = () => {
      return ( 
-        <header id="domu">
+        <header id="home">
             <div className="header__content container">
                 <div className="site-logo"></div>
 
@@ -21,3 +21,5 @@ export const Header = () => {
 
 
 }
+
+
