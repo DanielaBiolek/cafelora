@@ -19,7 +19,7 @@ const drinksData = await response.json();
 
 document.querySelector('#root').innerHTML = render(
   <div className="page">
-    <Header />
+    <Header showMenu={true}/>
     <main>
       <Banner />
       <Menu drinks={drinksData.data}/>
@@ -35,7 +35,7 @@ const navRollout = document.querySelector('.rollout-nav');
 const navButton = document.querySelector('.nav-btn');
 
 const navSwitchClass = () => {
-    nav.classList.toggle('nav-closed')
+    navRollout.classList.toggle('nav-closed')
 };
 
 navButton.addEventListener('click', navSwitchClass);

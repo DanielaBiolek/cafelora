@@ -8,7 +8,7 @@ import { Footer } from '../components/Footer';
 document.querySelector('#root').innerHTML = render(
   <div className="page">
     <div className="page">
-     <Header />
+     <Header showMenu={false} />
 
       <main className="order">
         <div className="container order__content">
