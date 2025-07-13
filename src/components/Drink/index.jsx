@@ -3,7 +3,7 @@ import './index.css';
 
 
 const urlImage = "http://localhost:4000"
-export const Drink = ({ name, image, layers, ordered }) => {
+export const Drink = ({ name, image, layers, ordered, id}) => {
 
     return (
         <div className="drink">
@@ -14,12 +14,12 @@ export const Drink = ({ name, image, layers, ordered }) => {
                   <div className="drink__info">
                     <h3>{name}</h3>
                     {layers.map((layer) => (
-                    <Layer color={layer.color} label={layer.label}/>))}
+                    <Layer color={layer.color} label={layer.label} key={layer.label}/>))}
                   </div>
                 </div>
-                <form className="drink__controls">
+                <form className="drink__controls" data-id={id} data-ordered={ordered}>
                   <input type="hidden" className="order-id" value="1" />
-                  <button className={ordered ? "order-btn order-btn--ordered" : "order-btn"}>
+                  <button  className={ordered ? "order-btn order-btn--ordered" : "order-btn"}>
                     {!ordered ? "Objednat" : "Zrušit"}
                   </button>
                 </form>
